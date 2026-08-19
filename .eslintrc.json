@@ -1,8 +1,10 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2022": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -21,5 +23,5 @@
     "prefer-const": "error",
     "no-var": "error"
   },
-  "ignorePatterns": ["node_modules/", "dist/", "build/"]
+  "ignorePatterns": ["node_modules/", "dist/", "build/", "docs/"]
 }
