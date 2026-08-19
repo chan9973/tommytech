@@ -1,0 +1,29 @@
+# TommyTech CODEOWNERS
+# All paths must have explicit owners. PRs are auto-requested for review.
+
+# Default owners for the entire repository
+*          @tommy <tommy@tommytech.com>
+
+# Security-critical files — require lead security review
+.github/SECURITY.md           @tommy <tommy@tommytech.com>
+.github/CODEOWNERS            @tommy <tommy@tommytech.com>
+.github/workflows/            @tommy <tommy@tommytech.com>
+.github/dependabot.yml        @tommy <tommy@tommytech.com>
+.github/settings.yml          @tommy <tommy@tommytech.com>
+.gitleaks.toml               @tommy <tommy@tommytech.com>
+
+# CI/CD — requires infrastructure lead review
+.github/workflows/ci.yml          @tommy <tommy@tommytech.com>
+.github/workflows/cd.yml          @tommy <tommy@tommytech.com>
+.github/workflows/security.yml    @tommy <tommy@tommytech.com>
+
+# Source code
+src/                         @tommy <tommy@tommytech.com>
+tests/                       @tommy <tommy@tommytech.com>
+scripts/                     @tommy <tommy@tommytech.com>
+docs/                        @tommy <tommy@tommytech.com>
+
+# Configuration
+package.json                 @tommy <tommy@tommytech.com>
+requirements.txt             @tommy <tommy@tommytech.com>
+pyproject.toml               @tommy <tommy@tommytech.com>

@@ -1,0 +1,41 @@
+# TommyTech .gitattributes — normalize line endings
+# Text files use LF on commit; Windows checkouts get CRLF via autocrlf.
+
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Explicitly LF for critical config files
+.github/CODEOWNERS             text eol=lf
+.github/dependabot.yml         text eol=lf
+.github/settings.yml           text eol=lf
+.github/workflows/*.yml        text eol=lf
+.gitleaks.toml                 text eol=lf
+.eslintrc.json                 text eol=lf
+.prettierrc.json               text eol=lf
+pyproject.toml                 text eol=lf
+.pre-commit-config.yaml        text eol=lf
+
+# Shell scripts — always LF
+*.sh   text eol=lf
+*.bash text eol=lf
+
+# Binary files
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.exe  binary
+*.dll  binary
+*.zip  binary
+*.tar  binary
+*.gz   binary
+
+# YAML/JSON are text
+*.yml  text
+*.yaml text
+*.json text
+*.toml text
+*.cfg  text
+*.md   text
