@@ -10,13 +10,13 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: "Deployment target"
+        description: 'Deployment target'
         required: true
-        default: "staging"
+        default: 'staging'
         type: choice
         options:
-          - "staging"
-          - "production"
+          - 'staging'
+          - 'production'
 
 env:
   REGISTRY: ghcr.io

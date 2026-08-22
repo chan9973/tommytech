@@ -12,14 +12,14 @@
 
 ## Branch Strategy
 
-| Branch       | Purpose                              |
-|-------------|--------------------------------------|
-| `main`       | Production-ready code                |
-| `develop`    | Integration branch for features     |
-| `feature/*`  | New features                          |
-| `fix/*`      | Bug fixes                             |
-| `release/*`  | Release preparation                   |
-| `hotfix/*`   | Emergency production fixes            |
+| Branch      | Purpose                         |
+| ----------- | ------------------------------- |
+| `main`      | Production-ready code           |
+| `develop`   | Integration branch for features |
+| `feature/*` | New features                    |
+| `fix/*`     | Bug fixes                       |
+| `release/*` | Release preparation             |
+| `hotfix/*`  | Emergency production fixes      |
 
 ## Code Review
 

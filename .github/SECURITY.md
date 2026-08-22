@@ -2,10 +2,10 @@
 
 ## Supported Versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 0.1.x   | ✅ Yes             |
-| < 0.1   | ❌ No              |
+| Version | Supported |
+| ------- | --------- |
+| 0.1.x   | ✅ Yes    |
+| < 0.1   | ❌ No     |
 
 ## Reporting a Vulnerability
 
@@ -30,21 +30,21 @@ GitHub issue if you discover a security vulnerability.
 
 ### Response Timeline
 
-| Step                     | SLA                |
-|--------------------------|--------------------|
-| Acknowledgment           | Within 24 hours    |
-| Triage & Initial Review  | Within 48 hours    |
-| Patch Development         | 1–2 weeks (severity depends) |
-| Disclosure               | After patch release |
+| Step                    | SLA                          |
+| ----------------------- | ---------------------------- |
+| Acknowledgment          | Within 24 hours              |
+| Triage & Initial Review | Within 48 hours              |
+| Patch Development       | 1–2 weeks (severity depends) |
+| Disclosure              | After patch release          |
 
 ### Vulnerability Classification
 
-| Severity | Impact              | Response Time |
-|----------|---------------------|----------------|
-| Critical | RCE, data breach    | < 4 hours      |
-| High     | Privilege escalation| < 24 hours     |
-| Medium   | Limited data leak   | < 1 week       |
-| Low      | Info disclosure     | < 2 weeks      |
+| Severity | Impact               | Response Time |
+| -------- | -------------------- | ------------- |
+| Critical | RCE, data breach     | < 4 hours     |
+| High     | Privilege escalation | < 24 hours    |
+| Medium   | Limited data leak    | < 1 week      |
+| Low      | Info disclosure      | < 2 weeks     |
 
 ### Bug Bounty
 

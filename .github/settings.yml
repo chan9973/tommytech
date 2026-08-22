@@ -3,43 +3,43 @@
 # Enforces consistent repo configuration across all TommyTech repos.
 
 repository:
-  name: "TommyTech"
-  description: "Multi-service technology platform — initialized by CTO agent"
-  homepage: "https://tommytech.com"
+  name: 'TommyTech'
+  description: 'Multi-service technology platform — initialized by CTO agent'
+  homepage: 'https://tommytech.com'
   topics:
-    - "python"
-    - "fastapi"
-    - "docker"
-    - "microservices"
-    - "infrastructure"
+    - 'python'
+    - 'fastapi'
+    - 'docker'
+    - 'microservices'
+    - 'infrastructure'
   labels:
-    - name: "bug"
-      color: "d73a4a"
+    - name: 'bug'
+      color: 'd73a4a'
       description: "Something isn't working"
-    - name: "enhancement"
-      color: "a2eeef"
-      description: "New feature or request"
-    - name: "security"
-      color: "e11d21"
-      description: "Security vulnerability or concern"
-    - name: "ci-cd"
-      color: "1f883d"
-      description: "CI/CD pipeline changes"
-    - name: "infrastructure"
-      color: "7057ff"
-      description: "Infrastructure and ops changes"
-    - name: "tech-debt"
-      color: "f7c648"
-      description: "Technical debt / refactoring"
+    - name: 'enhancement'
+      color: 'a2eeef'
+      description: 'New feature or request'
+    - name: 'security'
+      color: 'e11d21'
+      description: 'Security vulnerability or concern'
+    - name: 'ci-cd'
+      color: '1f883d'
+      description: 'CI/CD pipeline changes'
+    - name: 'infrastructure'
+      color: '7057ff'
+      description: 'Infrastructure and ops changes'
+    - name: 'tech-debt'
+      color: 'f7c648'
+      description: 'Technical debt / refactoring'
   branches:
-    - name: "main"
+    - name: 'main'
       protection:
         required_status_checks:
           strict: true
           contexts:
-            - "CI"
-            - "Security"
-            - "CodeQL"
+            - 'CI'
+            - 'Security'
+            - 'CodeQL'
         enforce_admins: true
         required_pull_request_reviews:
           required_approving_review_count: 1
@@ -48,13 +48,13 @@ repository:
         required_linear_history: true
         allow_force_pushes: false
         allow_deletions: false
-    - name: "develop"
+    - name: 'develop'
       protection:
         required_status_checks:
           strict: true
           contexts:
-            - "CI"
-            - "Security"
+            - 'CI'
+            - 'Security'
         enforce_admins: false
         required_pull_request_reviews:
           required_approving_review_count: 1
@@ -62,44 +62,44 @@ repository:
         allow_force_pushes: false
         allow_deletions: false
   variables:
-    - name: "TOMMTECH_ENV"
-      value: "production"
-      visibility: "all"
-      description: "Default environment for deployments"
+    - name: 'TOMMTECH_ENV'
+      value: 'production'
+      visibility: 'all'
+      description: 'Default environment for deployments'
   secrets:
     # These are set by the security team or via Vault
     # List of required secrets (actual values set manually)
-    - name: "DOCKERHUB_TOKEN"
-      visibility: "all"
-      description: "Docker Hub access token"
-    - name: "STAGING_DEPLOY_KEY"
-      visibility: "all"
-      description: "SSH deploy key for staging"
-    - name: "PRODUCTION_DEPLOY_KEY"
-      visibility: "all"
-      description: "SSH deploy key for production"
+    - name: 'DOCKERHUB_TOKEN'
+      visibility: 'all'
+      description: 'Docker Hub access token'
+    - name: 'STAGING_DEPLOY_KEY'
+      visibility: 'all'
+      description: 'SSH deploy key for staging'
+    - name: 'PRODUCTION_DEPLOY_KEY'
+      visibility: 'all'
+      description: 'SSH deploy key for production'
   environments:
-    - name: "staging"
-      description: "Staging environment"
-      url: "https://staging.tommytech.com"
+    - name: 'staging'
+      description: 'Staging environment'
+      url: 'https://staging.tommytech.com'
       deployment_branch_policy:
         protected_branches: false
         custom_branch_policies: true
       reviewers:
-        - type: "User"
-          name: "tommy"
+        - type: 'User'
+          name: 'tommy'
       variables:
-        - name: "ENV_NAME"
-          value: "staging"
-    - name: "production"
-      description: "Production environment"
-      url: "https://tommytech.com"
+        - name: 'ENV_NAME'
+          value: 'staging'
+    - name: 'production'
+      description: 'Production environment'
+      url: 'https://tommytech.com'
       deployment_branch_policy:
         protected_branches: true
       reviewers:
-        - type: "User"
-          name: "tommy"
-      wait_timer: 48  # 48-hour delay for production deploys
+        - type: 'User'
+          name: 'tommy'
+      wait_timer: 48 # 48-hour delay for production deploys
       variables:
-        - name: "ENV_NAME"
-          value: "production"
+        - name: 'ENV_NAME'
+          value: 'production'

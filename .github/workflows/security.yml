@@ -9,10 +9,10 @@ on:
   pull_request:
     branches: [main, develop]
   schedule:
-    - cron: "0 9 * * 1"   # Every Monday 09:00 UTC
+    - cron: '0 9 * * 1' # Every Monday 09:00 UTC
 
 permissions:
-  security-events: write  # For uploading CodeQL results
+  security-events: write # For uploading CodeQL results
   actions: read
   contents: read
 
@@ -22,7 +22,7 @@ env:
 jobs:
   # ─── CodeQL Static Analysis ───
   codeql:
-    name: "CodeQL Analysis"
+    name: 'CodeQL Analysis'
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -48,11 +48,11 @@ jobs:
       - name: Perform CodeQL build
         uses: github/codeql-action/analyze@v3
         with:
-          category: "codeql"
+          category: 'codeql'
 
   # ─── GitLeaks Secret Scanning ───
   gitleaks:
-    name: "GitLeaks Secret Scan"
+    name: 'GitLeaks Secret Scan'
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -63,7 +63,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Full history for gitleaks
+          fetch-depth: 0 # Full history for gitleaks
 
       - name: Run GitLeaks
         uses: gitleaks/gitleaks-action@v2
@@ -74,7 +74,7 @@ jobs:
 
   # ─── Dependency Vulnerability Scan ───
   dependency-scan:
-    name: "Dependency Vulnerability Scan"
+    name: 'Dependency Vulnerability Scan'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -87,7 +87,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install pip-audit
         run: pip install pip-audit
@@ -99,7 +99,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'
 
       - name: Install npm dependencies
         run: npm ci
@@ -115,7 +115,7 @@ jobs:
 
   # ─── SBOM Generation ───
   sbom:
-    name: "Software Bill of Materials"
+    name: 'Software Bill of Materials'
     runs-on: ubuntu-latest
     permissions:
       contents: read

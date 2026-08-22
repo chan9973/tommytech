@@ -8,14 +8,14 @@ on:
   push:
     branches: [main, develop]
     paths-ignore:
-      - "**.md"
-      - ".gitignore"
+      - '**.md'
+      - '.gitignore'
   pull_request:
     branches: [main, develop]
 
 env:
-  NODE_VERSION: "20"
-  PYTHON_VERSION: "3.11"
+  NODE_VERSION: '20'
+  PYTHON_VERSION: '3.11'
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
@@ -32,14 +32,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
+          cache: 'npm'
 
       - name: Setup Python ${{ env.PYTHON_VERSION }}
         id: python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-          cache: "pip"
+          cache: 'pip'
 
   # ─── Lint ───
   lint:
@@ -52,13 +52,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
+          cache: 'npm'
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-          cache: "pip"
+          cache: 'pip'
 
       - name: Install Node dependencies
         run: npm ci
@@ -90,17 +90,17 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          scan-type: "fs"
+          scan-type: 'fs'
           ignore-unpatched: true
-          format: "sarif"
-          output: "trivy-results.sarif"
-          severity: "CRITICAL,HIGH"
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          severity: 'CRITICAL,HIGH'
 
       - name: Upload Trivy scan results
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
-          sarif_file: "trivy-results.sarif"
+          sarif_file: 'trivy-results.sarif'
 
   # ─── Tests ───
   test:
@@ -108,8 +108,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.11", "3.12"]
-        node-version: ["20", "22"]
+        python-version: ['3.11', '3.12']
+        node-version: ['20', '22']
       fail-fast: false
 
     steps:
@@ -124,7 +124,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: 'npm'
 
       - name: Install Python dependencies
         run: |

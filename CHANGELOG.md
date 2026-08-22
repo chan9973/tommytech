@@ -1,6 +1,7 @@
 # Version 0.1.0
 
 ## Added
+
 - Initial repository structure
 - CI pipeline (`.github/workflows/ci.yml`)
 - CD pipeline (`.github/workflows/cd.yml`)
@@ -15,6 +16,7 @@
 - Documentation (`docs/`)
 
 ## Security
+
 - CodeQL static analysis on every PR
 - GitLeaks secret scanning on every commit
 - Trivy filesystem vulnerability scanning in CI
